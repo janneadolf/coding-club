@@ -1,0 +1,464 @@
+---
+layout: presentation
+title: From stand alone code to functions in R
+---
+
+class: center, middle
+
+![:scale 30%]({{ site.baseurl}}/assets/images/coding_club_logo_1.png)
+
+<!-- Do not forget to adapt the presentation title in the header! -->
+
+<!-- Adjust the presentation to the session. Focus on the challenges,
+    this is not a coding tutorial.
+
+    Note, to include figures, store the image in the `/docs/assets/images/yyyymmdd/`
+    folder and use the jekyll base.url reference as done in this template
+    or see https://jekyllrb.com/docs/liquid/tags/#links.
+    using the scale attribute ![:scale 30%](...), you can adjust the image size.
+-->
+
+<!--  Adjust the day, month  -->
+# 26 SEPTEMBER 2024
+
+## INBO coding club
+
+<!--  Adjust the room number and name  -->
+Herman Teirlinck Building
+
+01.19 Paul Van Ostaijen
+
+---
+class: center, middle
+
+<!-- Create a new badge using Inkscape or other programs based on the assets/images/coding_club_badges.svg file -->
+![:scale 90%]({{ site.baseurl}}/assets/images/20240926/20240926_badge.png)
+
+
+---
+class: left, top
+
+# Introduction: coding is cooking
+
+Working with functions is like using a food processor (NL: keukenrobot). A **function** is like a **recipe**. And coding is cooking...
+
+- With a food processor, you can use preset recipes, but you can also create your own recipes.
+- Working with functions, you can use preset functions (`names()`, `length()`, `median()`, ...), but you can also create your own functions.
+
+Think to have a food processor here in front of you:
+- You can define your own **recipe** by defining the needed **ingredients**, the **actions** to perform and then save it for later use by giving it a **name**.
+- You can define your own **function** by defining the needed **input arguments**, the **code** to execute and then save it for later use by giving it a **name**.
+
+
+---
+class: left, top
+
+# Introduction: coding is cooking
+
+My recipe, ehum, function:
+
+```
+make_bread <- function(grains, yeast, water, salt) {
+    # Code to generate `bread`.
+    # The code here can be easy (easy bread recipes do exist)
+    # or quite complex (complex bread recipes do exist too)
+    bread <- grains + yeast + water + salt
+    return(bread)
+}
+```
+
+
+---
+class: left, top
+
+# Introduction: coding is cooking
+
+- When ready, you can add ingredients to the food processor, select your own recipe, press `Play` and you will get the **food**.
+- When ready, you can pass inputs to the function, call your own function, press `Enter` and you will get the **output**.
+
+```
+# Prepare ingredients on the table = Define input values
+grains <- 20
+yeast <- 1
+water <- 2
+salt <- 3
+
+# Add ingredients in the food processor = Pass input values to arguments of the function
+bread <- make_bread(grains, yeast, water, salt) # Press `Enter`
+bread
+```
+
+
+---
+class: left, top
+
+# Introduction: coding is cooking
+
+You can use:
+- the same recipe with different ingredients
+- the same function with different input arguments
+
+```
+# Use the recipe with different (amount of) ingredients
+bread1 <- make_bread(grains1, yeast1, water1, salt1)
+bread2 <- make_bread(grains2, yeast2, water2, salt2)
+```
+
+You can use:
+- the same ingredients with different recipes
+- the same input arguments with different functions
+
+```
+# Make savory pie dough with the same ingredients
+savory_pie_dough1 <- make_savory_pie_dough(grains1, yeast1, water1, salt1)
+# Make focaccia with the same ingredients
+focaccia1 <- make_focaccia(grains1, yeast1, water1, salt1)
+```
+
+
+---
+class: left, top
+
+# Introduction: When do we ABSOLUTELY need functions?
+
+If both these conditions are true:
+
+- you have to `"do something"` longer than one line of code
+- you need to `"do something"` at least for two different inputs
+
+
+---
+class: left, top
+
+# Introduction: When SHOULD we use functions?
+
+- the `"do something"` is actually a workflow: split it in (small) functions
+- the `"do something"` is very short (e.g. a one-line formula) but often used: putting it in a function will give it an understandable name and will avoid typos
+
+.center[![:scale 60%]({{ site.baseurl}}/assets/images/20240926/20240926_logical_process_from_just_code_to_functions.png)
+]
+
+
+---
+class: left, top
+
+# Introduction: good names
+
+Functions are the building blocks of your data analysis: give your functions understandable and short enough names. It's better for future-you, it's better for everybody. Naming things is an art, a special skill: for some people is a job itself!
+
+From the B-Cubed software development guide (section [Naming functions](https://docs.b-cubed.eu/dev-guide/#r-function-naming)):
+
+_Use **verbs** to name functions whenever possible, this is a clear indication that a function does something, in contrast to other objects. For more guidance please refer to the tidyverse style guide [section on functions](https://style.tidyverse.org/functions.html#naming). Keep in mind that the name of the function should describe what it does as closely as possible._
+
+_If you find this difficult, consider if your function isn’t doing too much. Ideally a function should only do one thing, and only return one thing._
+
+
+---
+class: left, top
+
+# Introduction: multiple outputs?
+
+- Can your recipe prepare different meals at the same time? No.
+- Can a R function return multiple outputs? No. R functions return only **one output**: `return(my_meal)`
+
+But you can put your outputs (e.g. a data.frame and a plot) in a list. A named list will make everybody and the future-you very happy: documentation begins by naming things :-)
+
+```r
+make_doughs <- function(grains, yeast, water, salt) {
+  # Code to generate `bread` and `focaccia`
+  bread <- grains + yeast + water + salt
+  focaccia <- grains + 1.5 * yeast + 0.7 * water + 2 * salt
+  # Combine bread and focaccia as a list of doughs
+  doughs <- list(bread = bread, focaccia = focaccia)
+  return(doughs)
+}
+
+doughs <- make_doughs(20,1,2,3)
+doughs$bread
+> 26
+doughs$focaccia
+> 28.9
+```
+
+---
+class: center, top
+
+### How to get started?
+
+Check the [Each session setup](https://inbo.github.io/coding-club/gettingstarted.html#each-session-setup) to get started.
+
+### First time coding club?
+
+Check the [First time setup](https://inbo.github.io/coding-club/gettingstarted.html#first-time-setup) section to setup.
+
+---
+class: left, top
+
+![:scale 100%]({{ site.baseurl}}/assets/images/coding_club_sticky_concept.png)
+
+
+---
+class: center, middle
+
+# Share your code during the coding session
+
+<!-- Create a new hackmd file and replace this link (twice!) -->
+Go to https://hackmd.io/htj9oDrNQX6NN15jToGmHQ?both and start by adding your name in section "Participants".
+
+<iframe src="https://hackmd.io/htj9oDrNQX6NN15jToGmHQ?edit" height="400px" width="800px"></iframe>
+
+---
+class: left, top
+
+# Download data and code
+
+You can download the material of today:
+
+- automatically via `inborutils::setup_codingclub_session()`*
+
+- manually** from GitHub folders [coding-club/data/20240926](https://github.com/inbo/coding-club/tree/master/data/20240926) and [coding-club/src/20240926](https://github.com/inbo/coding-club/tree/master/src/20240926)
+
+<br>
+<small> __\* Note__: you can use the date in "YYYYMMDD" format to download the coding club material of a specific day, e.g. run `setup_codingclub_session("20201027")` to download the coding club material of October, 27 2020. If date is omitted, the date of today is used. For all options, check the [tutorial online](https://inbo.github.io/tutorials/tutorials/r_setup_codingclub_session/).</small>
+<br>
+<small> __\*\* Note__: check the getting started instructions on [how to download a single file](https://inbo.github.io/coding-club/gettingstarted.html#each-session-setup)</small>
+
+
+---
+class: left, top
+
+# Challenge 0
+
+Let's warm up. In the intro we wrote the function `make_doughs()`:
+
+```
+make_doughs <- function(grains, yeast, water, salt) {
+  # Code to generate `bread` and `focaccia`
+  bread <- grains + yeast + water + salt
+  focaccia <- grains + 1.5 * yeast + 0.7 * water + 2 * salt
+  # Combine bread and focaccia as a list of doughs
+  doughs <- list(bread = bread, focaccia = focaccia)
+  return(doughs)
+}
+```
+
+If you have only this function, you are not allowed to prepare only bread, or only focaccia. It's a pity, isn't it? Programmers say that this function needs a _refactoring_, an improvement as the function is not _atomic_*, it does too much. We can rewrite it as the composition of two _atomic_ functions: `make_bread()` and `make_focaccia()`.
+
+1. Write `make_bread()` and `make_focaccia()`. They return bread and focaccia respectively.
+2. Use them to rewrite `make_doughs()`.
+
+<br>
+<small> \* Atomic = not divisible in smaller parts. Ok, atoms are divisible in smaller parts, but we are not in the atomic world :-) </small>
+
+---
+class: left, top
+
+.center[![:scale 5%]({{ site.baseurl}}/assets/images/20240926/20240926_film.png)]
+
+# The Antwerp trilogy: Ladybeetles, Grasshoppers, and Data Science
+
+Once upon a time there was a biologist, Dorothy*. She received in January 2011 observations of the asian ladybeetle (_Harmonia axyridis_) collected in the surroundings of Antwerp. These observations are stored in [20240926_harmonia_axyridis_2010.txt](https://github.com/inbo/coding-club/blob/master/data/20240926/20240926_harmonia_axyridis_2010.txt). She wrote some code to read the observations, do some data wrangling and plot the results. You can find the code in [20240926_challenges.R](https://github.com/inbo/coding-club/blob/master/src/20240926/20240926_challenges.R).
+
+What seemed to be a one-shot anlysis, becomes very soon something more: she receives a similar file from another contractor containing observations of the bow-winged grasshopper (_Chorthippus biguttulus_) collected in the same area: [20240926_chorthippus_biguttulus_2010.txt](https://github.com/inbo/coding-club/blob/master/data/20240926/20240926_chorthippus_biguttulus_2010.txt).
+
+<br>
+<small> __\* The fictive Dorothy character is a tribute to [Dorothy Crowfoot Hodgkin](https://en.wikipedia.org/wiki/Dorothy_Hodgkin), a British chemist who won the Nobel Prize in Chemistry in 1964. She was a pioneer in the field of X-ray crystallography to study interesting biological molecules. Among others, she discovered the structure of the vitamine B12. </small>
+
+
+---
+class: left, top
+
+.center[![:scale 5%]({{ site.baseurl}}/assets/images/20240926/20240926_film.png)]
+
+# The Antwerp trilogy: Ladybeetles, Grasshoppers, and Data Science
+
+Dorothy also learns that she will have to redo the same analysis in the future, for sure on observations of the Asian ladybeetle, [20240926_harmonia_axyridis_2011.txt](https://github.com/inbo/coding-club/blob/master/data/20240926/20240926_harmonia_axyridis_2011.txt)
+
+And, she is afraid, new data of bow-winged grasshopper will find her sooner or later. I think you can find yourself in the role of Dorothy.
+
+
+---
+class: left, top
+
+# Best practices and suggestions
+
+- Best practice: write the functions in a **separate file**. You can call it `20240926_functions.R`. Put only the functions in this file!
+- Best practice: **source** this file, e.g. run `source("./src/20240926/20240926_functions.R")` or just click the "Source" button in RStudio.
+- Suggestion: leave the given script (`20240926_challenges.R`) as it is. Create a new file, e.g. `20240926_workflow.R` where you can put your code which will make use of the functions.
+
+
+---
+background-image: url({{ site.baseurl}}/assets/images/background_challenge_1.png)
+class: left, top
+
+# Challenge 1
+
+1. It's January 2011. After getting the observations of Harmonia axyridis, Dorothy
+gets the observations of _Chorthippus biguttulus_. Can she write a function called
+`get_obs_2010()` which takes
+as argument a species (e.g. `"Harmonia axyridis"`) and returns the observations
+of 2010 as a data.frame?
+
+2. It's January 2012. Dorothy gets the observations of Harmonia axyridis collected in 2011. She is wise so she is going to change the function she wrote the year before by renaming it `get_obs()` and adding `year` as extra argument. How does she proceed?
+
+
+---
+class: left, top
+
+# Intermezzo 1: what happens in the function stays in the function!
+
+Unfortunately not in R :-/
+
+```r
+grains <- 30
+make_tricky_bread <- function(yeast, water, salt) {
+  # `grains` is not defined as argument! Sitll, the function works...
+  bread <- grains + yeast + water + salt
+  return(bread)
+}
+
+make_tricky_bread(1, 10, 2)
+#> [1] 43
+make_tricky_bread(2, 15, 5)
+#> [1] 52
+make_tricky_bread(0.5, 20, 3.5)
+#> [1] 54
+```
+
+Even if it works, it is **bad** practice as it can end up in wrong results.*
+Better an error than a wrong result, right? So, please, be careful!
+
+<br>
+<small> __\* Note__: This aspect was mentioned already in the last coding club session, see [slide 38](https://inbo.github.io/coding-club/sessions/20240827_the_art_of_debugging.html#38). </small>
+
+
+---
+background-image: url({{ site.baseurl}}/assets/images/background_challenge_2.png)
+class: left, top
+
+# Challenge 2: defaults and arguments
+
+How does Dorothy proceed to write the following functions?
+
+1. `clean_data()`: function to return the cleaned data.frame without suspected or not enough precise observations (step 2). Input arguments:
+    - `df`: data.frame with observations
+    -  `max_coord_uncertain`: maximum of `coordinateUncertaintyInMeters` allowed (numeric). Default value as in script.
+    - `issues_to_discard`: issues whose obs have to be removed (character). Default value as in script.
+    - `occurrenceStatus_to_discard`: the `occurrenceStatus` values whose obs have to be removed (character). Default value as in script.
+2. `calc_grid_cell()`:  function to return the input data.frame with an extra column containing the cell code (step 3). Allow users to specify different cell sizes (lat/lon). Default values as in script. How to deal with data.frames where lat/lon columns are named differently?
+3. `calc_n_obs_ind()`: function to calculate the number of observations and individuals in each grid cell (step 4).
+4. `plot_distr_cells()`: function to create a histogram showing the cells distribution for both number of observations and number of individuals (step 5). Allow the user to choose the histogram binwidth. Default value as in script.
+
+
+---
+class: left, top
+
+# Intermezzo 2: document with style
+
+C. Bukowski once wrote that [_"Style is the answer to everything"_](https://genius.com/Charles-bukowski-style-annotated).
+
+Function documentation is essential while using R. How many times did you use the help (`?function_name`) in your daily woRk? So, let's document our functions with style!
+
+Stylish documentation can be done by following the [Roxygen2](https://roxygen2.r-lib.org/index.html) conventions as programmers writing functions for R packages do. Again, future-you and your colleagues will praise you. Do you know you can use the [`docstring`](https://github.com/dasonk/docstring) package to create help pages of your functions even if they are not in a package?
+
+Speaking about style, we, at INBO, follow the official and very stylish [INBO Styleguide for R code](https://inbo.github.io/tutorials/tutorials/styleguide_r_code/). Another good source of inspiration is the [tidyverse style guide](https://style.tidyverse.org/documentation.html). In between, you can use the [B-cubed software development guide](https://docs.b-cubed.eu/dev-guide/) mostly written by our colleague, Pieter.
+
+
+---
+class: left, top
+
+# Intermezzo 2: document with style
+
+You can create a roxygen documentation Skeleton via `Code` -> `Insert Roxygen Skeleton`. Move that part in your stand-alone function and write your documentation.
+
+```r
+install.packages("docstring")
+library(docstring)
+
+make_bread <- function(numvec) {
+  #' Make bread
+  #'
+  #' Function to make bread out of grains, yeast, water and salt.
+  #'
+  #' @param grains Numeric vector containing the amount of grains.
+  #' @param yeast Numeric vector containing the amount of yeast.
+  #' @param water Numeric vector containing the amount of water.
+  #' @param salt Numeric vector containing the amount of salt.
+  #'
+  #' @return Numeric vector containing the amount of bread.
+  #'
+  #' @examples
+  #' # Make bread with 20 grains, 1 yeast, 2 water and 3 salt
+  #' make_bread(20, 1, 2, 3)
+  bread <- grains + yeast + water + salt
+    return(bread)
+  return(output)
+}
+```
+
+Call documentation via:
+
+```r
+docstring(make_bread) # or just
+?make_bread
+```
+
+
+---
+class: left, top
+
+# Challenge  3: automatize the workflow
+
+Now that we have all blocks, automatize the entire workflow by creating a macrofunction called analyse_obs() embedding all steps developed in the previous challenges. Think about which arguments you need as input. Return a named list containing:
+
+- The data.frame as returned by `calc_n_obs_ind()`
+
+- The ggplot object as returned by `plot_distr_cells()`
+
+
+---
+class: left, top
+
+# The package of the month: inborutils
+
+Did you write a function useful for yourself and your colleagues? Share it by submitting it to [`inborutils`](https://github.com/inbo/inborutils) package. This package is a collection of functions that are useful for INBO data scientists. You can find there functions for data wrangling, data visualization, data analysis, and more. The package is maintained by INBO (Hans Vancalster, BMK team).
+
+.center[![:scale 80%]({{ site.baseurl}}/assets/images/20240926/20240926_inborutils_homepage.png)]
+
+
+---
+class: left, top
+
+# The R tip package of the month: Floris' choice
+
+**Keep R weird**: most of you have seen the email of Floris about an inspiring key note talk of Kelly Bodwin at the [useR! 2024](https://userconf2024.sched.com/) conference.
+
+<iframe width="672" height="378" src="https://www.youtube.com/embed/KOQBfC1WPwM?si=gITorL71h8s6ttO_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+---
+class:left, top
+
+# Resources
+
+- Challenges solutions and video recording will be soon available.
+- Do you want to learn more about functions?  Get a more [formal framework](https://www.stat.berkeley.edu/~statcur/Workshop2/Presentations/functions.pdf), go [in depth](http://adv-r.had.co.nz/Functions.html#function-arguments), do a check [under the hood](http://swcarpentry.github.io/swc-releases/2017.08/r-novice-inflammation/14-supp-call-stack/) or learn more about [programming with `dplyr`](https://dplyr.tidyverse.org/articles/programming.html).
+- The [INBO styleguide for R code](https://inbo.github.io/tutorials/tutorials/styleguide_r_code/).
+- The [B-Cubed software development guide](https://docs.b-cubed.eu/dev-guide/).
+- Some advices from [tidyverse style guide](https://style.tidyverse.org/documentation.html) can also be useful.
+- Packages [Roxygen2](https://roxygen2.r-lib.org/index.html) and [docstring](https://github.com/dasonk/docstring).
+- The [checklist](https://packages.inbo.be/checklist/index.html) package: a set of checks for R projects and R packages.
+- The [usethis](https://usethis.r-lib.org/index.html) package: a workflow package, useful for both for R packages and projects.
+
+
+---
+class: center, middle
+
+![:scale 30%]({{ site.baseurl}}/assets/images/coding_club_logo_1.png)
+
+<!--  Adjust the room and date  -->
+Room: 01.17 - Clara Peeters<br>
+Date: __29/10/2024__, van 10:00 tot 12:30<br>
+Subject: From stand alone functions to R packages <br>
+(registration announced via DG_useR@inbo.be)
