@@ -1,0 +1,13 @@
+update fork
+------------
+
+git fetch upstream main
+git checkout main
+git rebase upstream/main
+
+
+update adaptions
+-----------------
+git checkout adaptions
+git fetch origin
+git merge origin/main
