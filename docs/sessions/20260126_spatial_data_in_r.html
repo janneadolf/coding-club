@@ -268,7 +268,7 @@ Today we will work with these datasets:
 
 - [`20260126_occurrences_raccoon_be.txt`](https://github.com/inbo/coding-club/blob/main/data/20260126/20260126_occurrences_raccoon_be.txt) contains GBIF occurrences* of raccoon, _Procyon lotor_, in Belgium from 2000 up to 2025.
 - [`20260126_species_cube_raccoon_be.csv`](https://github.com/inbo/coding-club/blob/main/data/20260126/20260126_species_cube_raccoon_be.csv) contains the species occurrence cube** of raccoon (_Procyon lotor_) in Belgium from 2015 up to 2025, using the EEA 10kmx10km grid.
-- [`20260126_communesgemeente-belgium.zip`](https://github.com/inbo/coding-club/blob/main/data/20260126/20260126_communesgemeente-belgium.zip) contains the shapefile with the municipalities of Belgium\*\*\*. The coode to unzip is provided.
+- [`20260126_communesgemeente-belgium.zip`](https://github.com/inbo/coding-club/blob/main/data/20260126/20260126_communesgemeente-belgium.zip) contains the shapefile with the municipalities of Belgium\*\*\*. The code to unzip is provided.
 
 <small>
 __\* __ Derived from GBIF.org (06 January 2026) GBIF Occurrence Download https://doi.org/10.15468/dl.juf58a
@@ -377,7 +377,7 @@ a second layer called `raccoon_occs`, containing `occs_3035`. Hint: check
 https://r-spatial.github.io/sf/articles/sf2.html#using-st_write.
 3. Transform also `municipalities` to the CRS with EPSG code 3035. Call them
 `municipalities_3035`.
-4. Find the centroids of `municipalities_3035`. Call it `municipalities_3035_centroids`.
+4. Find the **centroids** of `municipalities_3035`. Call it `municipalities_3035_centroids`.
 
 ---
 background-image: url({{ site.baseurl}}/assets/images/background_challenge_3.png)
@@ -428,7 +428,8 @@ class: left, top
 
 ## Resources
 
-- Video recording and solutions will be available soon.
+- Comprehensive [solutions](https://github.com/inbo/coding-club/blob/main/src/20260126/20260126_challenges_solutions.R) are available on GitHub. You can opt to download the solutions automatically by using `inborutils::setup_codingclub_session("20260126")`.
+- The edited [video recording](https://vimeo.com/1159566109) is available on our [vimeo channel](https://vimeo.com/user/8605285/folder/1978815).
 - sf [homepage](https://r-spatial.github.io/sf/): the best place to start your "spatial" voyage.
 - sf [cheatsheet](https://github.com/inbo/coding-club/blob/master/cheat_sheets/20211026_cheat_sheet_sf.pdf)
 - See also this very nice [article with some examples](https://r-spatial.github.io/sf/articles/sf2.html)
