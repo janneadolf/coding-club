@@ -3,7 +3,15 @@
 
 |date | topic | slideshow | hackmd | location | video |
 | --- | ----- | ----------| ------ | -------  | ----- |
-| 2026-01-26 | spatial data in R | [slides]({{ site.baseurl }}{% link sessions/20260126_spatial_data_in_r.html  %}) | [hackmd](https://hackmd.io/acJrz9VVS9e1Mp_ED7pZeQ?view) | 01.05 - Isala Van Diest |  |
+| 2026-10-29 | QGIS algorithms with qgisprocess | [slides]({{ site.baseurl }}{% link sessions/20261029_qgisprocess.html  %}) | [hackmd](https://hackmd.io/gIGB6eFUQxW55_W-SYXaxA?view) | 01.19 Paul Van Ostaijen |  |
+| 2026-09-29 | INBO data in R | [slides]({{ site.baseurl }}{% link sessions/20260929_inbo_databases.html  %}) | [hackmd](https://hackmd.io/CK0CKFCERrewCOVBU8W6JA?view) | 00.48 - Keldermans | [YouTube](https://youtu.be/oIGla1w_UM8?si=4vnpSsEIri9tymJE) |
+| 2026-08-27 | SQL in R? Yes, we can! | [slides]({{ site.baseurl }}{% link sessions/20260827_sql_in_r.html  %}) | [hackmd](https://hackmd.io/dzthDR3CTHy0g4BWir0VRw?view) | 01.72 - Kaat Tilley |  |
+| 2026-06-30 | webservices in R | [slides]({{ site.baseurl }}{% link sessions/20260630_webservices_in_r.html  %}) | [hackmd](https://hackmd.io/DnQ53lvgSPyVlmUc9x1R1Q?view) | 01.21 - Jeanne Brabants | [vimeo](https://vimeo.com/1217429725) |
+| 2026-05-28 | rasters in R | [slides]({{ site.baseurl }}{% link sessions/20260528_rasters_in_r.html  %}) | [hackmd](https://hackmd.io/QW-TZty4RzO_FQ7cG6dhdw?view) | 01.20 - Willy Van Der Meeren | [vimeo](https://vimeo.com/1198348627) |
+| 2026-04-29 | data wrangling with tidyverse | [slides]({{ site.baseurl }}{% link sessions/20260429_data wrangling_with_tidyverse.html  %}) | [hackmd](https://hackmd.io/laEmld1JQTO99yEq_ipuzQ?view) | 01.71 - Frans Breziers | [vimeo](https://vimeo.com/1198348627?share=copy&fl=sv&fe=ci) |
+| 2026-03-31 | quarto repoRts | [slides]({{ site.baseurl }}{% link sessions/20260331_quarto_repoRts.html  %}) | [hackmd](https://hackmd.io/VNBTub-iRF-YyIMZ_bc7lg?view) | 01.71 - Frans Breziers | [vimeo](https://vimeo.com/1184810392) |
+| 2026-02-25 | spatial data visualization unleashed | [slides]({{ site.baseurl }}{% link sessions/20260225_spatial_data_visualization_unleashed.html  %}) | [hackmd](https://hackmd.io/j90LerTrRxavEKDTCU-f7w?view) | 00.48 - Keldermans | [vimeo](https://vimeo.com/1171754154?share=copy&fl=sv&fe=ci) |
+| 2026-01-26 | spatial data in R | [slides]({{ site.baseurl }}{% link sessions/20260126_spatial_data_in_r.html  %}) | [hackmd](https://hackmd.io/acJrz9VVS9e1Mp_ED7pZeQ?view) | 01.05 - Isala Van Diest | [vimeo](https://vimeo.com/1159566109) |
 | 2025-12-16 | from files to fRames | [slides]({{ site.baseurl }}{% link sessions/20251216_from_files_to_fRames.html  %}) | [hackmd](https://hackmd.io/bH5VSSwAQ46FXetH_NKn1Q?view) | 01.71 - Frans Breziers | [vimeo](https://vimeo.com/1154956476)  |
 | 2025-11-27 | mastering text wrangling in R | [slides]({{ site.baseurl }}{% link sessions/20251127_mastering_text_wrangling_in_r.html  %}) | [hackmd](https://hackmd.io/D46xpmDFR0KY0p5DL1SQRA?view) | 01.23 - Léon Stynen | [vimeo](https://vimeo.com/1141705801)  |
 | 2025-10-28 | Rmarkdown your report | [slides]({{ site.baseurl }}{% link sessions/20251028_rmarkdown_your_report.html  %}) | [hackmd](https://hackmd.io/@damianooldoni/rJMiAk6Tlx?view) | 01.17 - Clara Peeters |  |
